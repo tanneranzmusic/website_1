@@ -80,7 +80,7 @@ var venuesProperties = [{
 // VENUES REST URL
 
 var venuesConfig = {
-  json: "/venues.json",
+  json: "venues.json",
   layerName: "Venues",
   hoverProperty: "Venue"
 };
