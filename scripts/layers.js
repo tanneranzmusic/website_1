@@ -28,61 +28,14 @@ var highlightLayer = L.geoJson(null, {
     };
   },
   onEachFeature: function (feature, layer) {
-    if (feature.properties.sitetracker_id) {
-      if (feature.properties.sitetracker_id.toLowerCase().indexOf("slc_rou") === 0) {
-        layer.bindTooltip(feature.properties.fqn_id + " -- " + feature.properties.oofstatus, {sticky: 'true', direction: 'top'});
-      } else if (feature.properties.sitetracker_id.toLowerCase().indexOf("slc_seg") === 0) {
-        if (feature.properties.fqn_id.toLowerCase().indexOf("fib:bur") === 0) {
-          layer.bindTooltip(feature.properties.fqn_id + " -- Underground", {sticky: 'true', direction: 'top'});
-        } else if (feature.properties.fqn_id.toLowerCase().indexOf("fib:aer") === 0) {
-          layer.bindTooltip(feature.properties.fqn_id + " -- Aerial", {sticky: 'true', direction: 'top'});
-        }
-      } else if (feature.properties.sitetracker_id.toLowerCase().indexOf("slc_sit") === 0) {
-        layer.bindTooltip(feature.properties.nfid + " -- " + feature.properties.site_name, {sticky: 'true', direction: 'top'});
-      }
-    } else if (feature.properties.WO_ID) {
-      layer.bindTooltip(feature.properties.workordername, {sticky: 'true', direction: 'top'});
-    }
+
+    layer.bindTooltip(feature.properties.venue + " -- " + feature.properties.date, {sticky: 'true', direction: 'top'});
+
     layer.on({
       click: function (e) {
-        if (feature.properties.sitetracker_id.toLowerCase().indexOf("slc_rou") === 0) {
-          $("#gisRoutesInfo_Title").html(feature.properties.fqn_id);
-          gisRoutesHighlightInfo(L.stamp(layer));
-          gisSitesSidebar.hide();
-          gisSegmentsSidebar.hide();
-          gisRoutesSidebar.show();
-          gisStructuresSidebar.hide();
-          gisSplicesSidebar.hide();
-          gisWorkOrdersSidebar.hide();
-          fulcrumRoutesSidebar.hide();
-        } else if (feature.properties.sitetracker_id.toLowerCase().indexOf("slc_seg") === 0) {
-          $("#gisSegmentsInfo_Title").html(feature.properties.fqn_id);
-          gisSegmentsHighlightInfo(L.stamp(layer));
-          gisSitesSidebar.hide();
-          gisSegmentsSidebar.show();
-          gisRoutesSidebar.hide();
-          gisStructuresSidebar.hide();
-          gisSplicesSidebar.hide();
-          gisWorkOrdersSidebar.hide();
-          fulcrumRoutesSidebar.hide();
-        } else if (feature.properties.sitetracker_id.toLowerCase().indexOf("slc_sit") === 0) {
-          gisSitesHighlightInfo(L.stamp(layer));
-          gisSitesSidebar.show();
-          gisSegmentsSidebar.hide();
-          gisRoutesSidebar.hide();
-          gisStructuresSidebar.hide();
-          gisSplicesSidebar.hide();
-          gisWorkOrdersSidebar.hide();
-          fulcrumRoutesSidebar.hide();
-        } else if (feature.properties.WO_ID.toLowerCase().indexOf("wo_slc") === 0) {
-          gisWorkOrdersHighlightInfo(L.stamp(layer));
-          gisSitesSidebar.hide();
-          gisSegmentsSidebar.hide();
-          gisRoutesSidebar.hide();
-          gisStructuresSidebar.hide();
-          gisSplicesSidebar.hide();
-          gisWorkOrdersSidebar.show();
-          fulcrumRoutesSidebar.hide();
+        if (feature.properties.venue) {
+          $("#venuesInfo_Title").html(feature.properties.venue);
+          venuesSidebar.show();
         }
       }
     });
@@ -102,27 +55,21 @@ var baseLayers = {
 // OVERLAY LAYERS
 
 var overlayLayers = {
-  "<span id='layer-name'>Sites</span>": gisSitesLayer,
-  "<span id='layer-name'>Segments</span>": gisSegmentsLayer,
-  "<span id='layer-name'>Routes</span>": gisRoutesLayer,
-  "<span id='layer-name'>Structures</span>": gisStructuresLayer,
-  "<span id='layer-name'>Splices</span>": gisSplicesLayer,
-  "<span id='layer-name'>Work Orders</span>": gisWorkOrdersLayer,
-  "<span id='layer-name'>Fulcrum Routes</span>": fulcrumRoutesLayer
+  "<span id='layer-name'>Sites</span>": venuesLayer
 };
 
 
 // ADD LAYERS TO MAP
 
 var map = L.map("map", {
-  layers: [mapboxOSM, gisSitesLayer, highlightLayer],
+  layers: [mapboxOSM, venuesLayer, highlightLayer],
   minZoom: 5,
   zoomControl: false
 });
 
-// SET VIEW TO SALT LAKE CITY, UT
+// SET VIEW TO GULF SHORES, AL
 
-map.setView([40.758, -111.876], 5)
+map.setView([30.2480188, -87.689155], 5)
 
 
 // MAP CLICKING
@@ -140,20 +87,8 @@ map.on('click', function(event){
 map.on('dblclick', function(event){
     map.clicked = 0;
     highlightLayer.clearLayers();
-    gisSitesSidebar.hide();
-    gisSitesSearch.hide();
-    gisSegmentsSidebar.hide();
-    gisSegmentsSearch.hide();
-    gisRoutesSidebar.hide();
-    gisRoutesSearch.hide();
-    gisStructuresSidebar.hide();
-    gisStructuresSearch.hide();
-    gisSplicesSidebar.hide();
-    gisSplicesSearch.hide();
-    gisWorkOrdersSidebar.hide();
-    gisWorkOrdersSearch.hide();
-    fulcrumRoutesSidebar.hide();
-    fulcrumRoutesSearch.hide();
+    venuesSidebar.hide();
+    venuesSearch.hide();
 });
 
 
