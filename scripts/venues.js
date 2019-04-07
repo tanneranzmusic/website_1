@@ -3,6 +3,7 @@
 var venuesProperties = [{
   value: "status",
   label: "Status",
+  hyperlink: false,
   table: {
     visible: true
   },
@@ -17,6 +18,7 @@ var venuesProperties = [{
 {
   value: "city",
   label: "City",
+  hyperlink: false,
   table: {
     visible: true,
     sortable: true
@@ -32,6 +34,7 @@ var venuesProperties = [{
 {
   value: "state",
   label: "State",
+  hyperlink: false,
   table: {
     visible: true,
     sortable: true
@@ -47,6 +50,7 @@ var venuesProperties = [{
 {
   value: "venue",
   label: "Venue",
+  hyperlink: false,
   table: {
     visible: true,
     sortable: true
@@ -62,6 +66,7 @@ var venuesProperties = [{
 {
   value: "date",
   label: "Date",
+  hyperlink: false,
   table: {
     visible: true,
     sortable: true
@@ -69,6 +74,22 @@ var venuesProperties = [{
   filter: {
     value: "date",
     type: "date",
+    vertical: true,
+    multiple: true,
+    operators: ["equal", "not_equal", "contains"],
+    values: []
+  }
+},
+{
+  value: "venue_email",
+  label: "Facebook",
+  hyperlink: true,
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "string",
     vertical: true,
     multiple: true,
     operators: ["equal", "not_equal", "contains"],
@@ -204,8 +225,8 @@ function venuesInfo(id) {
     }
     $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
-        if (property.info !== false) {
-          content += "<tr><th>" + property.label + "</th><td>" + value + "</td></tr>";
+        if (property.table.visible !== false && property.hyperlink == true) {
+          content += "<tr><th>" + property.label + "</th><td>" + str.link(value) + "</td></tr>";
         }
       }
     });
@@ -254,3 +275,12 @@ $("#venues_table-btn").click(function(){
   $("#venuesTable-container").show();
   $(window).resize();
 });
+
+// VENUE EMAIL
+
+$(document).ready(function() {
+    $("#venues_email-btn").click(function() {
+      var featureProperties = venuesLayer.getLayer(id).feature.properties;
+      document.location.href = "mailto:" + featureProperties.venue_email;
+    });
+});​
