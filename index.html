@@ -32,7 +32,6 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" name="title" id="navbar-title"><img src="pictures/logos/tilson_2.png"></a>
           <div class="navbar-icon-container">
             <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
           </div>
@@ -44,19 +43,19 @@
             <li class="dropdown">
               <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-table"></i> <span id="table-only">Table </span><b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="venue_table-btn"><i class="fa fa-table black"></i>  Venues</a></li>
+                <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="venues_table-btn"><i class="fa fa-table black"></i>  Venues</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> <span id="view">Search </span><b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="venue_list-btn"><i class="fa fa-search black"></i>  Venues</a></li>
+                <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="venues_list-btn"><i class="fa fa-search black"></i>  Venues</a></li>
               </ul>
             </li>
             <li><a href="#" id="Refresh_BTN" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-refresh fa-white"></i>&nbsp;&nbsp;Refresh</a></li> 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <a class="navbar-brand" href="https://www.tilsontech.com" target="_blank" name="title" id="navbar-title"> OneFiber | SLC </a>
+            <a class="navbar-brand" href="https://www.tilsontech.com" target="_blank" name="title" id="navbar-title"> Tanner Anz Music </a>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -66,20 +65,12 @@
       <div id="map"></div>
     </div>
 
-    <div id="loading-mask" class="modal-backdrop">
-      <div class="loading-indicator">
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-info loading-bar"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="venueSearch">
+    <div id="venuesSearch">
       <div class="sidebar-wrapper">
-        <div class="panel panel-default" id="venue_features">
+        <div class="panel panel-default" id="venues_features">
           <div class="panel-heading">
             <h3 class="panel-title">Venues
-            <button type="button" class="btn btn-xs btn-default pull-right" id="venue_sidebar-hide-btn"><i class="fa fa-chevron-left"></i></button></h3>
+            <button type="button" class="btn btn-xs btn-default pull-right" id="venues_sidebar-hide-btn"><i class="fa fa-chevron-left"></i></button></h3>
           </div>
           <div class="panel-body">
             <div class="row">
@@ -87,12 +78,12 @@
                 <input type="text" class="form-control search" placeholder="Search" />
               </div>
               <div class="col-xs-4 col-md-4">
-                <button type="button" class="btn btn-primary pull-right sort" data-sort="venue_feature-name" id="venue_sort-btn"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
+                <button type="button" class="btn btn-primary pull-right sort" data-sort="venues_feature-name" id="venues_sort-btn"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>
               </div>
             </div>
           </div>
           <div class="sidebar-table">
-            <table class="table table-hover" id="venue_feature-list">
+            <table class="table table-hover" id="venues_feature-list">
               <thead class="hidden">
                 <tr>
                   <th>Icon</th>
@@ -111,21 +102,21 @@
       </div>
     </div>
 
-    <div id="venueSidebar">
-      <h3 class="modal-title text-primary" id="venueInfo_Title"></h3>
-      <div id="venue-Info_DATA" class="sidebar-table"></div>
+    <div id="venuesSidebar">
+      <h3 class="modal-title text-primary" id="venuesInfo_Title"></h3>
+      <div id="venues-Info_DATA" class="sidebar-table"></div>
       <br>
       <footer>
-        <button type="button" class="btn btn-primary" id="venueTable-btn">View Table</button>
-        <button type="button" class="btn btn-success" id="venueCreate-btn">Create Record</button>
-        <button type="button" class="btn btn-danger" id="venueEdit-btn">Edit Record</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" id="venueClose-sidebarBTN">Close</button>
+        <button type="button" class="btn btn-primary" id="venuesTable-btn">View Table</button>
+        <button type="button" class="btn btn-success" id="venuesCreate-btn">Create Record</button>
+        <button type="button" class="btn btn-danger" id="venuesEdit-btn">Edit Record</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="venuesClose-sidebarBTN">Close</button>
       </footer>
     </div>
 
-    <div id="venueTable-container"> 
+    <div id="venuesTable-container"> 
       <br>
-      <table id="venueTable" class="stripe" style="width:100%"></table>
+      <table id="venuesTable" class="stripe" style="width:100%"></table>
     </div>
 
 
