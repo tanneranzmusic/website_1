@@ -275,12 +275,3 @@ $("#venues_table-btn").click(function(){
   $("#venuesTable-container").show();
   $(window).resize();
 });
-
-// VENUE EMAIL
-
-$(document).ready(function() {
-    $("#venues_email-btn").click(function() {
-      var featureProperties = venuesLayer.getLayer(id).feature.properties;
-      document.location.href = "mailto:" + featureProperties.venue_email;
-    });
-});​
