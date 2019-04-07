@@ -1,8 +1,8 @@
-// GIS SITES PROPERTIES
+// VENUES PROPERTIES
 
-var gisSitesProperties = [{
-  value: "sitetracker_id",
-  label: "STID",
+var venuesProperties = [{
+  value: "status",
+  label: "Status",
   table: {
     visible: true
   },
@@ -15,101 +15,8 @@ var gisSitesProperties = [{
   }
 },
 {
-  value: "objectid",
-  label: "GISID",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "nfid",
-  label: "NFID",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "site_name",
-  label: "NAME",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "clustername",
-  label: "HUB",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    input: "radio",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal"],
-    values: []
-  }
-},
-{
-  value: "tower_type",
-  label: "TYPE",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    input: "radio",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal"],
-    values: []
-  }
-},
-{
-  value: "spoke",
-  label: "SPOKE",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "integer",
-    input: "radio",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal"],
-    values: []
-  }
-},
-{
   value: "city",
-  label: "CITY",
+  label: "City",
   table: {
     visible: true,
     sortable: true
@@ -123,15 +30,14 @@ var gisSitesProperties = [{
   }
 },
 {
-  value: "site_survey_est",
-  label: "SITE SURVEY (F)",
+  value: "state",
+  label: "State",
   table: {
     visible: true,
     sortable: true
   },
   filter: {
-    value: "date",
-    type: "date",
+    type: "string",
     vertical: true,
     multiple: true,
     operators: ["equal", "not_equal", "contains"],
@@ -139,15 +45,14 @@ var gisSitesProperties = [{
   }
 },
 {
-  value: "site_survey_actual",
-  label: "SITE SURVEY (A)",
+  value: "venue",
+  label: "Venue",
   table: {
     visible: true,
     sortable: true
   },
   filter: {
-    value: "date",
-    type: "date",
+    type: "string",
     vertical: true,
     multiple: true,
     operators: ["equal", "not_equal", "contains"],
@@ -155,152 +60,8 @@ var gisSitesProperties = [{
   }
 },
 {
-  value: "permit_submitted_estimated",
-  label: "PERMIT SBMT (F)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "permit_submitted_actual",
-  label: "PERMIT SBMT (A)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "permit_received_estimated",
-  label: "PERMIT RCVD (F)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "permit_received_actual",
-  label: "PERMIT RCVD (A)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "construction_start_estimated",
-  label: "CONST START (F)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "construction_start_actual",
-  label: "CONST START (A)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "cable_placed_estimated",
-  label: "CABLE PLACED (F)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "cable_placed_actual",
-  label: "CABLE PLACED (A)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "splicingtestingcompleteestimate",
-  label: "SPLICE/TEST (F)",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    value: "date",
-    type: "date",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "splicingtestingcompleteactual",
-  label: "SPLICE/TEST (A)",
+  value: "date",
+  label: "Date",
   table: {
     visible: true,
     sortable: true
@@ -316,63 +77,50 @@ var gisSitesProperties = [{
 }];
 
 
+// VENUES REST URL
 
-// GIS SITES FIELDS
-
-var gisSitesFields = gisSitesProperties.map(function(elem) {
-  return elem.value;
-}).join("%2C");
-
-
-// GIS SITES REST URL
-
-var gisSitesConfig = {
-  geojson: "https://gis.tilsontech.com/arcgis/rest/services/SiteTracker/SLC_OneFiber/MapServer/2/query?where=objectid+IS+NOT+NULL&outFields=" + gisSitesFields + "&f=geojson&token=" + gis_token,
-  layerName: "Sites",
-  hoverProperty: "site_name"
+var venuesConfig = {
+  geojson: "http://cors.io/spreadsheets.google.com/feeds/list/2PACX-1vTI5xv510oROAeh8c5rzN6LjxdOOaUBl2uX5Wrx7KpKj3UNAonqeQcB1TLt4DnwReNoxt0Y-0bBJ8By/od6/public/values?alt=json",
+  layerName: "Venues",
+  hoverProperty: "Venue"
 };
 
 
-// GIS SITES BUILD CONFIG
+// VENUES BUILD CONFIG
 
 
-function gisSitesBuildConfig() {
-  gisSitesTable = [];
+function venuesBuildConfig() {
+  venuesTable = [];
 
-  $.each(gisSitesProperties, function(index, value) {
+  $.each(venuesProperties, function(index, value) {
     if (value.table) {
-      gisSitesTable.push({
+      venuesTable.push({
         data: "properties." + value.value,
         title: value.label
       });
       $.each(value.table, function(key, val) {
-        if (gisSitesTable[index+1]) {
-          gisSitesTable[index+1][key] = val;
+        if (venuesTable[index+1]) {
+          venuesTable[index+1][key] = val;
         }
       });
     }
   });
 
-  gisSitesBuildTable()
-  map.flyToBounds(gisSitesLayer.getBounds());
+  venuesBuildTable()
+  map.flyToBounds(venuesLayer.getBounds());
 }
 
 
 
 
-// GIS SITES LAYER
+// VENUES LAYER
 
-var gisSitesLayer = L.geoJson(null, {
-  filter: function (feature) {
-    if (feature.properties.clustername.toLowerCase().indexOf("loop") === -1) {
-      return true
-    };
-  },
+var venuesLayer = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
-    layer.bindTooltip(feature.properties.nfid + " -- " + feature.properties.site_name, {sticky: 'true', direction: 'top'});
+    layer.bindTooltip(feature.properties.venue + " -- " + feature.properties.date, {sticky: 'true', direction: 'top'});
 
     if (feature.properties) {
-      var title = feature.properties.site_name;
+      var title = feature.properties.venue;
       var content = "<table class='table table-striped table-bordered table-condensed'>";
       content += "<table>";
       layer.on({
@@ -383,8 +131,8 @@ var gisSitesLayer = L.geoJson(null, {
           gisSplicesSidebar.hide();
           gisWorkOrdersSidebar.hide();
           fulcrumRoutesSidebar.hide();
-          $("#gisSitesInfo_Title").html(feature.properties.nfid);
-          gisSitesInfo(L.stamp(layer));
+          $("#venuesInfo_Title").html(feature.properties.nfid);
+          venuesInfo(L.stamp(layer));
           activeRecord = feature.properties.site_name;
           highlightLayer.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
@@ -394,7 +142,7 @@ var gisSitesLayer = L.geoJson(null, {
           }));
         }
       });
-      $("#gisSites_feature-list tbody").append('<tr onclick= "gisSitesSearchClick(' + L.stamp(layer) + ')"><td class="gisSites_feature-name">' + layer.feature.properties.site_name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      $("#venues_feature-list tbody").append('<tr onclick= "venuesSearchClick(' + L.stamp(layer) + ')"><td class="venues_feature-name">' + layer.feature.properties.site_name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
     }
     if (feature.properties.removesite === "Yes" || feature.properties.removesite === "Y" || feature.properties.clustername === "REMOVE") {
       layer.setIcon(
@@ -465,29 +213,29 @@ var gisSitesLayer = L.geoJson(null, {
 });
 
 
-function gisSitesSearchClick(id) {
-  var layer = gisSitesLayer.getLayer(id);
+function venuesSearchClick(id) {
+  var layer = venuesLayer.getLayer(id);
   map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 16);
   layer.fire("click");
   /* Hide sidebar and go to the map on small screens */
   if (document.body.clientWidth <= 767) {
-    gisSitesSidebar.hide();
+    venuesSidebar.hide();
     map.invalidateSize();
   }
 }
 
 
-//GIS SITES DATA
+//VENUES DATA
 
-$.getJSON(gisSitesConfig.geojson, function (data) {
-  gisSitesData = data;
-  gisSitesFeatures = $.map(gisSitesData.features, function(feature) {
+$.getJSON(venuesConfig.geojson, function (data) {
+  venuesData = data;
+  venuesFeatures = $.map(venuesData.features, function(feature) {
     return feature.properties;
   });
-  gisSitesLayer.addData(data);
-  gisSitesList = new List("gisSites_features", {valueNames: ["gisSites_feature-name"]});
-  gisSitesList.sort("gisSites_feature-name", {order:"asc"});
-  gisSitesBuildConfig()
+  venuesLayer.addData(data);
+  venuesList = new List("venues_features", {valueNames: ["venues_feature-name"]});
+  venuesList.sort("venues_feature-name", {order:"asc"});
+  venuesBuildConfig()
 }).error(function(jqXHR, textStatus, errorThrown) {
     console.log("error " + textStatus);
     console.log("incoming Text " + jqXHR.responseText);
@@ -496,11 +244,11 @@ $.getJSON(gisSitesConfig.geojson, function (data) {
 
 
 
-// GIS SITES INFO
+// VENUES INFO
 
-function gisSitesInfo(id) {
+function venuesInfo(id) {
   
-  var featureProperties = gisSitesLayer.getLayer(id).feature.properties;
+  var featureProperties = venuesLayer.getLayer(id).feature.properties;
 
   var content = "<table class='table table-striped table-bordered table-condensed'>";
 
@@ -515,7 +263,7 @@ function gisSitesInfo(id) {
       sessionStorage.setItem("site_name", value);
     }
 
-    $.each(gisSitesProperties, function(index, property) {
+    $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
         if (value && property.filter.value == "date") {
           date = new Date(value);
@@ -528,17 +276,17 @@ function gisSitesInfo(id) {
     });
   });
   content += "<table>";
-  $("#gisSites-Info_DATA").html(content);
-  gisSitesSidebar.show();
+  $("#venues-Info_DATA").html(content);
+  venuesSidebar.show();
 };
 
 
 
-// GIS SITES TABLE
+// VENUES TABLE
 
-function gisSitesBuildTable() {
+function venuesBuildTable() {
 
-    gisSitesDataTable = $('#gisSitesTable').DataTable({ // Change table element ID here
+    venuesDataTable = $('#venuesTable').DataTable({ // Change table element ID here
     dom: 'Bfrtip', // Add this to enable export buttons
     buttons: [ // Add this to choose which buttons to display
         'copy', 'csv', 'excel', 'pdf', 'print'
@@ -548,7 +296,7 @@ function gisSitesBuildTable() {
       targets: [8,9,10,11,12,13,14,15,16,17,18,19],
       render: $.fn.dataTable.render.moment('x', 'MM/DD/YYYY')
     }],
-    data: gisSitesData.features,
+    data: venuesData.features,
     "autoWidth": true, // Feature control DataTables' smart column width handling
     "deferRender": true, // Feature control deferred rendering for additional speed of initialisation.
     "info": true, // Display info about table including filtering
@@ -561,22 +309,17 @@ function gisSitesBuildTable() {
     "searching": true, // Toggle search all columns field
     "stateSave": true, // If true, table will restore to user filtered state when page is reopened     
     "scrollCollapse": true, // If true, the table will be collapsed if the height of the records is < the scrollY option; prevents footer from floating
-    "columns": gisSitesTable,
+    "columns": venuesTable,
     "language": {
       "emptyTable": "Loading..."
     }
   });
 }
 
-// GIS SITES OPEN TABLE
+// VENUES OPEN TABLE
 
-$("#gisSites_table-btn").click(function(){
+$("#venues_table-btn").click(function(){
   $("#map-container").hide();
-  $("#gisSitesTable-container").show();
-  $("#gisSegmentsTable-container").hide();
-  $("#gisRoutesTable-container").hide();
-  $("#gisStructuresTable-container").hide();
-  $("#gisSplicesTable-container").hide();
-  $("#gisWorkOrdersTable-container").hide();
+  $("#venuesTable-container").show();
   $(window).resize();
 });
