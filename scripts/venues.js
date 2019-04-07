@@ -80,7 +80,7 @@ var venuesProperties = [{
 // VENUES REST URL
 
 var venuesConfig = {
-  geojson: "http://cors.io/spreadsheets.google.com/feeds/list/2PACX-1vTI5xv510oROAeh8c5rzN6LjxdOOaUBl2uX5Wrx7KpKj3UNAonqeQcB1TLt4DnwReNoxt0Y-0bBJ8By/od6/public/values?alt=json",
+  json: "/venues.js",
   layerName: "Venues",
   hoverProperty: "Venue"
 };
@@ -125,15 +125,9 @@ var venuesLayer = L.geoJson(null, {
       content += "<table>";
       layer.on({
         click: function (e) {
-          gisSegmentsSidebar.hide();
-          gisRoutesSidebar.hide();
-          gisStructuresSidebar.hide();
-          gisSplicesSidebar.hide();
-          gisWorkOrdersSidebar.hide();
-          fulcrumRoutesSidebar.hide();
-          $("#venuesInfo_Title").html(feature.properties.nfid);
+          $("#venuesInfo_Title").html(feature.properties.venue);
           venuesInfo(L.stamp(layer));
-          activeRecord = feature.properties.site_name;
+          activeRecord = feature.properties.venue;
           highlightLayer.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
             fillColor: "#00d0ff",
@@ -142,60 +136,12 @@ var venuesLayer = L.geoJson(null, {
           }));
         }
       });
-      $("#venues_feature-list tbody").append('<tr onclick= "venuesSearchClick(' + L.stamp(layer) + ')"><td class="venues_feature-name">' + layer.feature.properties.site_name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      $("#venues_feature-list tbody").append('<tr onclick= "venuesSearchClick(' + L.stamp(layer) + ')"><td class="venues_feature-name">' + layer.feature.properties.venue + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
     }
-    if (feature.properties.removesite === "Yes" || feature.properties.removesite === "Y" || feature.properties.clustername === "REMOVE") {
-      layer.setIcon(
-        L.icon({
-          iconUrl: "pictures/markers/cb0d0c.png",
-          iconSize: [30, 40],
-          iconAnchor: [15, 32]
-        })
-      );
-    } else if (feature.properties.splicingtestingcompleteactual > 0) {
-      layer.setIcon(
-        L.icon({
-          iconUrl: "pictures/markers/ffffff.png",
-          iconSize: [30, 40],
-          iconAnchor: [15, 32]
-        })
-      );
-    } else if (feature.properties.cable_placed_actual > 0) {
+    if (feature.properties.status = "Playing") {
       layer.setIcon(
         L.icon({
           iconUrl: "pictures/markers/87d30f.png",
-          iconSize: [30, 40],
-          iconAnchor: [15, 32]
-        })
-      );
-    } else if (feature.properties.construction_start_actual > 0) {
-      layer.setIcon(
-        L.icon({
-          iconUrl: "pictures/markers/da0796.png",
-          iconSize: [30, 40],
-          iconAnchor: [15, 32]
-        })
-      );
-    } else if (feature.properties.permit_received_actual > 0) {
-      layer.setIcon(
-        L.icon({
-          iconUrl: "pictures/markers/1891c9.png",
-          iconSize: [30, 40],
-          iconAnchor: [15, 32]
-        })
-      );
-    } else if (feature.properties.permit_submitted_actual > 0) {
-      layer.setIcon(
-        L.icon({
-          iconUrl: "pictures/markers/ff8819.png",
-          iconSize: [30, 40],
-          iconAnchor: [15, 32]
-        })
-      );
-    } else if (feature.properties.site_survey_actual > 0) {
-      layer.setIcon(
-        L.icon({
-          iconUrl: "pictures/markers/242424.png",
           iconSize: [30, 40],
           iconAnchor: [15, 32]
         })
@@ -227,7 +173,7 @@ function venuesSearchClick(id) {
 
 //VENUES DATA
 
-$.getJSON(venuesConfig.geojson, function (data) {
+$.getJSON(venuesConfig.json, function (data) {
   venuesData = data;
   venuesFeatures = $.map(venuesData.features, function(feature) {
     return feature.properties;
@@ -256,19 +202,8 @@ function venuesInfo(id) {
     if (!value) {
       value = "";
     }
-    if (key == "sitetracker_id") {
-      sessionStorage.setItem("siteSiteTrackerID", value);
-    }
-    if (key == "site_name") {
-      sessionStorage.setItem("site_name", value);
-    }
-
     $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
-        if (value && property.filter.value == "date") {
-          date = new Date(value);
-          value = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
-        }
         if (property.info !== false) {
           content += "<tr><th>" + property.label + "</th><td>" + value + "</td></tr>";
         }
@@ -292,10 +227,6 @@ function venuesBuildTable() {
         'copy', 'csv', 'excel', 'pdf', 'print'
     ],
     colReorder: true,
-    columnDefs: [{
-      targets: [8,9,10,11,12,13,14,15,16,17,18,19],
-      render: $.fn.dataTable.render.moment('x', 'MM/DD/YYYY')
-    }],
     data: venuesData.features,
     "autoWidth": true, // Feature control DataTables' smart column width handling
     "deferRender": true, // Feature control deferred rendering for additional speed of initialisation.
