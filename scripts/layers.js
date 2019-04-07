@@ -55,7 +55,7 @@ var baseLayers = {
 // OVERLAY LAYERS
 
 var overlayLayers = {
-  "<span id='layer-name'>Sites</span>": venuesLayer
+  "<span id='layer-name'>Venues</span>": venuesLayer
 };
 
 

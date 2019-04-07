@@ -173,20 +173,14 @@ function venuesSearchClick(id) {
 
 //VENUES DATA
 
-$.getJSON(venuesConfig.json, function (data) {
-  venuesData = data;
-  venuesFeatures = $.map(venuesData.features, function(feature) {
-    return feature.properties;
-  });
-  venuesLayer.addData(data);
-  venuesList = new List("venues_features", {valueNames: ["venues_feature-name"]});
-  venuesList.sort("venues_feature-name", {order:"asc"});
-  venuesBuildConfig()
-}).error(function(jqXHR, textStatus, errorThrown) {
-    console.log("error " + textStatus);
-    console.log("incoming Text " + jqXHR.responseText);
-    alert("error " + textStatus);
+venuesData = "/venues.js";
+venuesFeatures = $.map(venuesData.features, function(feature) {
+  return feature.properties;
 });
+venuesLayer.addData(data);
+venuesList = new List("venues_features", {valueNames: ["venues_feature-name"]});
+venuesList.sort("venues_feature-name", {order:"asc"});
+venuesBuildConfig()
 
 
 
