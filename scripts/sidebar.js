@@ -45,3 +45,20 @@ var venuesSearch = L.control.sidebar("venuesSearch", {
     position: "left",
     autoPan: false
 }).addTo(map);
+
+
+// MUSIC SIDEBAR
+
+$("#music").click(function(){
+  $("#soundcloud").show();
+});
+
+$("#soundcloud-sidebarBTN").click(function(){
+  venuesSidebar.hide();
+});
+
+var soundcloud = L.control.sidebar("soundcloud", {
+    closeButton: false,
+    position: "right",
+    autoPan: false
+}).addTo(map);
