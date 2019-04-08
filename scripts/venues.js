@@ -148,6 +148,8 @@ var venuesLayer = L.geoJson(null, {
         click: function (e) {
           $("#venuesInfo_Title").html(feature.properties.venue);
           venuesInfo(L.stamp(layer));
+          var venueImage = document.getElementsByClassName("venuesImage");
+          venueImage.src = feature.properties.venue_image
           activeRecord = feature.properties.venue;
           highlightLayer.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
@@ -222,10 +224,6 @@ function venuesInfo(id) {
   $.each(featureProperties, function(key, value) {
     if (!value) {
       value = "";
-    }
-    if (value.includes("http")) {
-      var venueImage = document.getElementsByClassName("venuesImage");
-      venueImage.src = value
     }
     $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
