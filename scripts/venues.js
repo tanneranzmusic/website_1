@@ -84,6 +84,10 @@ var venuesProperties = [{
   value: "venue_image",
   label: "Image",
   hyperlink: true,
+  table: {
+    visible: false,
+    sortable: true
+  },
   filter: {
     type: "string",
     vertical: true,
