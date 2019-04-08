@@ -79,22 +79,6 @@ var venuesProperties = [{
     operators: ["equal", "not_equal", "contains"],
     values: []
   }
-},
-{
-  value: "venue_email",
-  label: "Facebook",
-  hyperlink: true,
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
 }];
 
 
@@ -225,8 +209,8 @@ function venuesInfo(id) {
     }
     $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
-        if (property.table.visible !== false && property.hyperlink == true) {
-          content += "<tr><th>" + property.label + "</th><td>" + str.link(value) + "</td></tr>";
+        if (property.table.visible !== false) {
+          content += "<tr><th>" + property.label + "</th><td>" + value + "</td></tr>";
         }
       }
     });
