@@ -84,10 +84,6 @@ var venuesProperties = [{
   value: "venue_image",
   label: "Image",
   hyperlink: true,
-  table: {
-    visible: false,
-    sortable: true
-  },
   filter: {
     type: "string",
     vertical: true,
@@ -112,7 +108,6 @@ var venuesConfig = {
 
 function venuesBuildConfig() {
   venuesTable = [];
-
   $.each(venuesProperties, function(index, value) {
     if (value.table) {
       venuesTable.push({
@@ -148,8 +143,7 @@ var venuesLayer = L.geoJson(null, {
         click: function (e) {
           $("#venuesInfo_Title").html(feature.properties.venue);
           venuesInfo(L.stamp(layer));
-          var venueImage = document.getElementsByClassName("venuesImage");
-          venueImage.src = feature.properties.venue_image
+          document.getElementById("venuesImage").src = feature.properties.venue_image
           activeRecord = feature.properties.venue;
           highlightLayer.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
