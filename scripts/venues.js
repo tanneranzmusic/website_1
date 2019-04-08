@@ -223,7 +223,7 @@ function venuesInfo(id) {
     if (!value) {
       value = "";
     }
-    if (key == "venue_image") {
+    if (value.str.includes("http")) {
       var venueImage = document.getElementsByClassName("venuesImage");
       venueImage.src = value
     }
