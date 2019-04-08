@@ -18,6 +18,13 @@ $("#venuesTable-btn").click(function(){
   $(window).resize();
 });
 
+$("#venuesWebsite-btn").click(function(){
+  window.location.href = sessionStorage.getItem("venue_website")
+});
+
+$("#venuesFacebook-btn").click(function(){
+  window.location.href = sessionStorage.getItem("venue_facebook")
+});
 
 // VENUES SEARCH SIDEBAR
 

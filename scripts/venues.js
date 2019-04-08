@@ -79,6 +79,38 @@ var venuesProperties = [{
     operators: ["equal", "not_equal", "contains"],
     values: []
   }
+},
+{
+  value: "venue_website",
+  label: "Website",
+  hyperlink: true,
+  table: {
+    visible: false,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    vertical: true,
+    multiple: true,
+    operators: ["equal", "not_equal", "contains"],
+    values: []
+  }
+},
+{
+  value: "venue_facebook",
+  label: "Facebook",
+  hyperlink: true,
+  table: {
+    visible: false,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    vertical: true,
+    multiple: true,
+    operators: ["equal", "not_equal", "contains"],
+    values: []
+  }
 }];
 
 
@@ -97,7 +129,7 @@ var venuesConfig = {
 function venuesBuildConfig() {
   venuesTable = [];
   $.each(venuesProperties, function(index, value) {
-    if (value.table) {
+    if (value.table.visible !== false) {
       venuesTable.push({
         data: "properties." + value.value,
         title: value.label
@@ -204,6 +236,12 @@ function venuesInfo(id) {
   $.each(featureProperties, function(key, value) {
     if (!value) {
       value = "";
+    }
+    if (key == "venue_website") {
+      sessionStorage.setItem("venue_website", value);
+    }
+    if (key == "venue_facebook") {
+      sessionStorage.setItem("venue_facebook", value);
     }
     $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
