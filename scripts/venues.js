@@ -79,6 +79,22 @@ var venuesProperties = [{
     operators: ["equal", "not_equal", "contains"],
     values: []
   }
+},
+{
+  value: "venue_image",
+  label: "Image",
+  hyperlink: true,
+  table: {
+    visible: false,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    vertical: true,
+    multiple: true,
+    operators: ["equal", "not_equal", "contains"],
+    values: []
+  }
 }];
 
 
@@ -206,6 +222,10 @@ function venuesInfo(id) {
   $.each(featureProperties, function(key, value) {
     if (!value) {
       value = "";
+    }
+    if (key == "venue_image") {
+      var venueImage = document.getElementsByClassName("venuesImage");
+      venueImage.src = value
     }
     $.each(venuesProperties, function(index, property) {
       if (key == property.value) {
