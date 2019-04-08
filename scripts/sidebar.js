@@ -12,12 +12,6 @@ var venuesSidebar = L.control.sidebar("venuesSidebar", {
 }).addTo(map);
 
 
-$("#venuesTable-btn").click(function(){
-  $("#map-container").hide();
-  $("#venuesTable-container").show();
-  $(window).resize();
-});
-
 $("#venuesWebsite-btn").click(function(){
   window.open(sessionStorage.getItem("venue_website"))
 });
@@ -28,7 +22,7 @@ $("#venuesFacebook-btn").click(function(){
 
 // VENUES SEARCH SIDEBAR
 
-$("#venues_list-btn").click(function(){
+$("#search").click(function(){
   venuesSearch.show();
   map.invalidateSize();
 });
