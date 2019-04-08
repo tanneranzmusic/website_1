@@ -39,33 +39,17 @@ input[type="radio"], input[type="checkbox"] {
   width: 100%;
   height: 100px;
 }
-#gisSites_features {
+#venues_features {
   margin: 0px;
   border: none;
   border-radius: 0px;
   -webkit-box-shadow: none;
     box-shadow: none;
 }
-#gisSites_sidebar-hide-btn {
+#venues_sidebar-hide-btn {
   margin-top: -2px;
 }
-#gisSites-Info_DATA table tr td {
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-    hyphens: auto;
-}
-#gisSegments_features {
-  margin: 0px;
-  border: none;
-  border-radius: 0px;
-  -webkit-box-shadow: none;
-    box-shadow: none;
-}
-#gisSegments_sidebar-hide-btn {
-  margin-top: -2px;
-}
-#gisSegments-Info_DATA table tr td {
+#venues-Info_DATA table tr td {
   word-break: break-all;
   word-break: break-word;
   -webkit-hyphens: auto;

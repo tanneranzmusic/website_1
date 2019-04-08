@@ -79,22 +79,6 @@ var venuesProperties = [{
     operators: ["equal", "not_equal", "contains"],
     values: []
   }
-},
-{
-  value: "venue_image",
-  label: "Image",
-  hyperlink: true,
-  table: {
-    visible: false,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
 }];
 
 
