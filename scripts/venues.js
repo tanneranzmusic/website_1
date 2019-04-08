@@ -16,40 +16,24 @@ var venuesProperties = [{
   }
 },
 {
-  value: "city",
-  label: "City",
-  hyperlink: false,
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
-  value: "state",
-  label: "State",
-  hyperlink: false,
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "string",
-    vertical: true,
-    multiple: true,
-    operators: ["equal", "not_equal", "contains"],
-    values: []
-  }
-},
-{
   value: "venue",
   label: "Venue",
+  hyperlink: false,
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    vertical: true,
+    multiple: true,
+    operators: ["equal", "not_equal", "contains"],
+    values: []
+  }
+},
+{
+  value: "location",
+  label: "Location",
   hyperlink: false,
   table: {
     visible: true,
