@@ -19,11 +19,11 @@ $("#venuesTable-btn").click(function(){
 });
 
 $("#venuesWebsite-btn").click(function(){
-  window.location.href = sessionStorage.getItem("venue_website")
+  window.open("'" + sessionStorage.getItem("venue_website") + "'",'_blank')
 });
 
 $("#venuesFacebook-btn").click(function(){
-  window.location.href = sessionStorage.getItem("venue_facebook")
+  window.open("'" + sessionStorage.getItem("venue_facebook") + "'",'_blank')
 });
 
 // VENUES SEARCH SIDEBAR
