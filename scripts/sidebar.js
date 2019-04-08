@@ -12,6 +12,12 @@ var venuesSidebar = L.control.sidebar("venuesSidebar", {
 }).addTo(map);
 
 
+$("#venuesTable-btn").click(function(){
+  $("#map-container").hide();
+  $("#venuesTable-container").show();
+  $(window).resize();
+});
+
 $("#venuesWebsite-btn").click(function(){
   window.open(sessionStorage.getItem("venue_website"))
 });
@@ -22,7 +28,7 @@ $("#venuesFacebook-btn").click(function(){
 
 // VENUES SEARCH SIDEBAR
 
-$("#search").click(function(){
+$("#venues_list-btn").click(function(){
   venuesSearch.show();
   map.invalidateSize();
 });
@@ -37,22 +43,5 @@ $("#venues_sidebar-hide-btn").click(function() {
 var venuesSearch = L.control.sidebar("venuesSearch", {
     closeButton: false,
     position: "left",
-    autoPan: false
-}).addTo(map);
-
-
-// MUSIC SIDEBAR
-
-$("#music").click(function(){
-  $("#soundcloud").show();
-});
-
-$("#soundcloud-sidebarBTN").click(function(){
-  venuesSidebar.hide();
-});
-
-var soundcloud = L.control.sidebar("soundcloud", {
-    closeButton: false,
-    position: "right",
     autoPan: false
 }).addTo(map);

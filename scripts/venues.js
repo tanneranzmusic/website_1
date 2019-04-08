@@ -290,7 +290,7 @@ function venuesBuildTable() {
 
 // VENUES OPEN TABLE
 
-$("#table").click(function(){
+$("#venues_table-btn").click(function(){
   $("#map-container").hide();
   $("#venuesTable-container").show();
   $(window).resize();
