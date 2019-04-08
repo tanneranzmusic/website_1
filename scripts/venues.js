@@ -147,8 +147,6 @@ var venuesLayer = L.geoJson(null, {
         click: function (e) {
           $("#venuesInfo_Title").html(feature.properties.venue);
           venuesInfo(L.stamp(layer));
-          document.getElementById("venuesImage").src = feature.properties.venue_image
-          activeRecord = feature.properties.venue;
           highlightLayer.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
             fillColor: "#00d0ff",
