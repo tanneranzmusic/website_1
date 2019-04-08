@@ -89,6 +89,7 @@ map.on('dblclick', function(event){
     highlightLayer.clearLayers();
     venuesSidebar.hide();
     venuesSearch.hide();
+    soundcloud.hide();
 });
 
 
@@ -135,7 +136,7 @@ L.control.scale().addTo(map);
 
 // MAP VIEW
 
-$("#map-only").click(function(){
+$("#show-map").click(function(){
   $("#map-container").show();
   $(window).resize();
 });
