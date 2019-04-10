@@ -35,7 +35,7 @@ var setlistProperties = [{
 
 // SETLIST CSV TO JSON
 
-setlistCSV = new CSV("setlist.csv", { header: true }).parse();
+setlistCSV = CSV.parse("setlist.csv")
 
 
 // SETLIST BUILD CONFIG
