@@ -35,11 +35,12 @@ var setlistProperties = [{
 
 // CSV to JSON
 
-var csvjson = require('csvjson');
-
-var setlistCSV = fs.readFileSync(path.join(__dirname, 'setlist.csv'), { encoding : 'utf8'});
-
-var setlistJSON = csvjson.toObject(setlistCSV);
+Papa.parse("setlist.csv", {
+  download: true,
+  complete: function(results) {
+    console.log(results);
+  }
+});
 
 
 // SETLIST BUILD CONFIG
