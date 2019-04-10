@@ -50,9 +50,11 @@ var setlistProperties = [{
 
 function setlistCSV() {
 
+  setlistCSV = setlistDATA.responseText
+
   var result = [];
 
-  var lines = setlistDATA.responseText.split("\n");
+  var lines = setlistCSV.split("\n");
 
   var headers = lines[0].split(",");
 
