@@ -35,33 +35,35 @@ var setlistProperties = [{
 
 // SETLIST CSV TO JSON
 
-csvJSON()
+var csv = "setlist.csv"
 
-function csvJSON() {
+$.ajax({
+  type: "GET",
+  url: csv,
+  dataType: "text/csv",
+  success: function(data) {
+    var result = [];
 
-  var csv = "setlist.csv"
+    var lines = data.split("\n");
 
-  var result = [];
+    var headers = lines[0].split(",");
 
-  var lines = csv.split("\n");
+    for(var i=1;i<lines.length;i++) {
 
-  var headers = lines[0].split(",");
+      var obj = {};
+      var currentline = lines[i].split(",");
 
-  for(var i=1;i<lines.length;i++) {
-
-    var obj = {};
-    var currentline = lines[i].split(",");
-
-    for(var j=0;j<headers.length;j++) {
-      obj[headers[j]] = currentline[j];
+      for(var j=0;j<headers.length;j++) {
+        obj[headers[j]] = currentline[j];
+      }
+      result.push(obj);
     }
-    result.push(obj);
-  }
-  
-  setlistJSON = JSON.stringify(result);
 
-  setlistBuildConfig()
-}
+    setlistJSON = JSON.stringify(result);
+
+    setlistBuildConfig();
+  }
+});
 
 
 // SETLIST BUILD CONFIG
