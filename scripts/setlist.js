@@ -1,6 +1,21 @@
 // SETLIST PROPERTIES
 
 var setlistProperties = [{
+  value: "genre",
+  label: "Genre",
+  hyperlink: false,
+  table: {
+    visible: true
+  },
+  filter: {
+    type: "string",
+    vertical: true,
+    multiple: true,
+    operators: ["equal"],
+    values: []
+  }
+}
+{,
   value: "artist",
   label: "Artist",
   hyperlink: false,
