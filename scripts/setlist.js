@@ -40,13 +40,12 @@ Papa.parse("setlist.csv", {
   header: true,
   complete: function(results) {
     setlistCSV = results.data;
+    setlistBuildConfig();
   }
 });
 
 
 // SETLIST BUILD CONFIG
-
-setlistBuildConfig();
 
 function setlistBuildConfig() {
   setlistTable = [];
