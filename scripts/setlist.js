@@ -1,3 +1,15 @@
+// SETLIST DATA
+
+function setlistData() {
+  setlistDATA = $.ajax({
+    type: "GET",
+    url: "setlist.csv",
+    dataType: "text/csv"
+  });
+
+  setlistCSV();
+}
+
 // SETLIST PROPERTIES
 
 var setlistProperties = [{
@@ -34,15 +46,8 @@ var setlistProperties = [{
 
 
 // SETLIST CSV TO JSON
-setlistData();
 
-function setlistData() {
-  
-  setlistDATA = $.ajax({
-    type: "GET",
-    url: "setlist.csv",
-    dataType: "text/csv"
-  });
+function setlistCSV() {
 
   var result = [];
 
