@@ -271,11 +271,3 @@ function venuesBuildTable() {
     }
   });
 }
-
-// VENUES OPEN TABLE
-
-$("#venues_table-btn").click(function(){
-  $("#map-container").hide();
-  $("#venuesTable-container").show();
-  $(window).resize();
-});
