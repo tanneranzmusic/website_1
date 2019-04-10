@@ -37,7 +37,7 @@ var setlistProperties = [{
 
 Papa.parse("setlist.csv", {
   download: true,
-  header: false,
+  header: true,
   complete: function(results) {
     setlistCSV = results.data;
     setlistBuildConfig();
@@ -50,7 +50,7 @@ Papa.parse("setlist.csv", {
 function setlistBuildConfig() {
   setlistTable = [];
   $.each(setlistProperties, function(index, value) {
-    if (value.table.visible !== false) {
+    if (value.table.visible !== false && value.value !== "") {
       setlistTable.push({
         data: value.value,
         title: value.label
