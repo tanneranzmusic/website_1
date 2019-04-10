@@ -14,8 +14,8 @@ var setlistProperties = [{
     operators: ["equal"],
     values: []
   }
-}
-{,
+},
+{
   value: "artist",
   label: "Artist",
   hyperlink: false,
