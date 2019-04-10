@@ -38,7 +38,7 @@ var setlistProperties = [{
 Papa.parse("setlist.csv", {
   download: true,
   complete: function(results) {
-    console.log(results);
+    setlistCSV = results;
   }
 });
 
@@ -77,7 +77,7 @@ function setlistBuildTable() {
         'copy', 'csv', 'excel', 'pdf', 'print'
     ],
     colReorder: true,
-    data: setlistJSON,
+    data: setlistCSV,
     "autoWidth": true, // Feature control DataTables' smart column width handling
     "deferRender": true, // Feature control deferred rendering for additional speed of initialisation.
     "info": true, // Display info about table including filtering
