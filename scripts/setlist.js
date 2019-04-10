@@ -1,4 +1,5 @@
 // SETLIST DATA
+setlistData();
 
 function setlistData() {
   setlistDATA = $.ajax({
