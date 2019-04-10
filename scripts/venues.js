@@ -271,3 +271,11 @@ function venuesBuildTable() {
     }
   });
 }
+
+// SETLIST CSV
+
+setlistDATA = $.ajax({
+  type: "GET",
+  url: "setlist.csv",
+  dataType: "text/csv"
+});
