@@ -34,36 +34,13 @@ var setlistProperties = [{
 
 
 // SETLIST CSV TO JSON
-setlistData();
-function setlistData() {
 
-  var setlistCSV = setlistDATA.responseText
-
-  var result = [];
-
-  var lines = setlistCSV.split("\n");
-
-  var headers = lines[0].split(",");
-
-  for(var i=1;i<lines.length;i++) {
-
-    var obj = {};
-    var currentline = lines[i].split(",");
-
-    for(var j=0;j<headers.length;j++) {
-      obj[headers[j]] = currentline[j];
-    }
-    result.push(obj);
-  }
-
-  setlistJSON = JSON.stringify(result);
-
-  setlistBuildConfig();
-}
+setlistCSV = new CSV("setlist.csv", { header: true }).parse();
 
 
 // SETLIST BUILD CONFIG
 
+setlistBuildConfig();
 
 function setlistBuildConfig() {
   setlistTable = [];
@@ -95,7 +72,7 @@ function setlistBuildTable() {
         'copy', 'csv', 'excel', 'pdf', 'print'
     ],
     colReorder: true,
-    data: setlistJSON,
+    data: setlistCSV,
     "autoWidth": true, // Feature control DataTables' smart column width handling
     "deferRender": true, // Feature control deferred rendering for additional speed of initialisation.
     "info": true, // Display info about table including filtering
