@@ -37,7 +37,7 @@ var setlistProperties = [{
 setlistData();
 function setlistData() {
 
-  setlistCSV = setlistDATA.responseText
+  var setlistCSV = setlistDATA.responseText
 
   var result = [];
 
