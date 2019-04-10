@@ -39,7 +39,7 @@ Papa.parse("setlist.csv", {
   download: true,
   header: true,
   complete: function(results) {
-    setlistCSV = results;
+    setlistCSV = results.data;
   }
 });
 
