@@ -72,7 +72,7 @@ function setlistBuildConfig() {
   $.each(setlistProperties, function(index, value) {
     if (value.table.visible !== false) {
       setlistTable.push({
-        data: "properties." + value.value,
+        data: value.value,
         title: value.label
       });
       $.each(value.table, function(key, val) {
