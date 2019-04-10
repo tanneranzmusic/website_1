@@ -62,7 +62,7 @@ var overlayLayers = {
 // ADD LAYERS TO MAP
 
 var map = L.map("map", {
-  layers: [mapboxOSM, venuesLayer, highlightLayer],
+  layers: [mapboxSat, venuesLayer, highlightLayer],
   minZoom: 5,
   zoomControl: false
 });
