@@ -37,7 +37,7 @@ var setlistProperties = [{
 
 Papa.parse("setlist.csv", {
   download: true,
-  header: true,
+  header: false,
   complete: function(results) {
     setlistCSV = results.data;
     setlistBuildConfig();
