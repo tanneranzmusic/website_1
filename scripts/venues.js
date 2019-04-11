@@ -160,7 +160,7 @@ var venuesLayer = L.geoJson(null, {
     if (feature.properties.status = "Playing") {
       layer.setIcon(
         L.icon({
-          iconUrl: "pictures/markers/87d30f.png",
+          iconUrl: "pictures/logo_marker.png",
           iconSize: [30, 40],
           iconAnchor: [15, 32]
         })
@@ -168,7 +168,7 @@ var venuesLayer = L.geoJson(null, {
     } else {
       layer.setIcon(
         L.icon({
-          iconUrl: "pictures/markers/704b10.png",
+          iconUrl: "pictures/logo_marker.png",
           iconSize: [30, 40],
           iconAnchor: [15, 32]
         })
