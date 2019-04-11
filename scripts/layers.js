@@ -14,36 +14,6 @@ var mapboxSat = L.tileLayer('https://api.mapbox.com/v4/cfritz1387.573ca1ee/{z}/{
 });
 
 
-// HIGHLIGHT LAYERS
-
-var highlightLayer = L.geoJson(null, {
-  style: function (feature) {
-    return {
-      color: "#00d0ff",
-      weight: 10,
-      opacity: 1,
-      fillColor: "#00d0ff",
-      fillOpacity: 1,
-      clickable: false
-    };
-  },
-  onEachFeature: function (feature, layer) {
-
-    layer.bindTooltip(feature.properties.venue + " -- " + feature.properties.date, {sticky: 'true', direction: 'top'});
-
-    layer.on({
-      click: function (e) {
-        if (feature.properties.venue) {
-          $("#venuesInfo_Title").html(feature.properties.venue);
-          venuesSidebar.show();
-        }
-      }
-    });
-  }
-});
-
-
-
 // BASE LAYERS
 
 var baseLayers = {

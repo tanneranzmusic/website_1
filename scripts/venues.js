@@ -147,12 +147,6 @@ var venuesLayer = L.geoJson(null, {
         click: function (e) {
           $("#venuesInfo_Title").html(feature.properties.venue);
           venuesInfo(L.stamp(layer));
-          highlightLayer.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
-            stroke: false,
-            fillColor: "#00d0ff",
-            fillOpacity: 1,
-            radius: 5
-          }));
         }
       });
       $("#venues_feature-list tbody").append('<tr onclick= "venuesSearchClick(' + L.stamp(layer) + ')"><td class="venues_feature-name">' + layer.feature.properties.venue + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
