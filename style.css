@@ -101,7 +101,9 @@ input[type="radio"], input[type="checkbox"] {
   color: #FFFFFF;
 }
 .navbar-brand img {
-  height: 250%;
+  height: 200%;
+  margin-top: 0px;
+  margin-right: 0px;
   display: inline;
 }
 .navbar-header .navbar-icon-container {
