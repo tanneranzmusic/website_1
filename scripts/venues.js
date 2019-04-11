@@ -162,7 +162,7 @@ var venuesLayer = L.geoJson(null, {
         L.icon({
           iconUrl: "pictures/music_marker.png",
           iconSize: [50, 50],
-          iconAnchor: [12, 40]
+          iconAnchor: [18, 40]
         })
       );
     } else {
@@ -170,7 +170,7 @@ var venuesLayer = L.geoJson(null, {
         L.icon({
           iconUrl: "pictures/music_marker.png",
           iconSize: [50, 50],
-          iconAnchor: [12, 40]
+          iconAnchor: [18, 40]
         })
       );
     }
